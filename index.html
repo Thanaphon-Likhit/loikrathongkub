@@ -1,0 +1,61 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ลอยกระทงออนไลน์ - Krathong KUB</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Ethers.js -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.9.0/dist/ethers.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>ลอยกระทงออนไลน์ 🐱✨</h1>
+    <div id="networkNotice"></div>
+  </header>
+
+  <main>
+    <section class="left">
+      <div class="wallet">
+        <button id="connectBtn">เชื่อมต่อ MetaMask</button>
+        <div id="addr"></div>
+        <div id="balance"></div>
+      </div>
+
+      <div class="controls">
+        <label>เลือกแบบกระทง</label>
+        <div class="designs" id="designs">
+          <!-- designs inserted by JS -->
+        </div>
+
+        <label>จำนวน KUB ที่จะหยอด</label>
+        <input id="amount" type="number" step="0.0001" min="0" placeholder="เช่น 0.1">
+
+        <label>เขียนคำอธิษฐาน (ตัวอักษรสูงสุด 200)</label>
+        <textarea id="wish" maxlength="200" placeholder="ขอให้..."></textarea>
+
+        <button id="floatBtn">ลอยกระทง 🌊</button>
+      </div>
+
+      <div class="stats">
+        <h3>สถิติ</h3>
+        <div>ยอดรวมที่เผา: <span id="totalBurned">0</span> KUB</div>
+        <div>ยอดค่าธรรมเนียมรวม: <span id="totalFees">0</span> KUB</div>
+        <div>ธุรกรรมทั้งหมด: <span id="totalTx">0</span></div>
+      </div>
+    </section>
+
+    <section class="right">
+      <h2>กระทงที่ลอยล่าสุด</h2>
+      <div id="krathongList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>รองรับ KUB Chain (Mainnet / Testnet / Layer2). ทดสอบบน Testnet ก่อนส่งจริง</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
